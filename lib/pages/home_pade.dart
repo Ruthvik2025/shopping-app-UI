@@ -15,6 +15,7 @@ class HomePage extends StatelessWidget {
           child: const Text("Legion"),
         ),
       ),
+      drawer: Drawer(),
     );
   }
 }
