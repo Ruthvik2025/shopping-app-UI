@@ -1,5 +1,6 @@
 import 'package:days_30_flutter/pages/home_pade.dart';
 import 'package:days_30_flutter/pages/login_page.dart';
+import 'package:days_30_flutter/utili/class_route.dart';
 import "package:flutter/material.dart";
 
 void main() {
@@ -18,8 +19,8 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/": (context) => LoginPage(),
-        "/login": (context) => LoginPage(),
-        "/home": (context) => HomePage(),
+        MyRoute.loginRoute: (context) => LoginPage(),
+        MyRoute.homeRoute: (context) => HomePage(),
       },
     );
   }
