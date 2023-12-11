@@ -1,11 +1,13 @@
 import "package:flutter/material.dart";
 
 class MyDrawer extends StatelessWidget {
+  const MyDrawer({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Colors.deepPurple,
+        color: Colors.black,
         child: ListView(
           padding: EdgeInsets.zero,
           children: const [
@@ -14,7 +16,7 @@ class MyDrawer extends StatelessWidget {
               child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.zero,
                 accountName: Text("Ruthvik W"),
-                accountEmail: Text("ruthvik@@gmail.com"),
+                accountEmail: Text("ruthvik11@gmail.com"),
                 currentAccountPicture: CircleAvatar(
                   backgroundImage: AssetImage(
                       "assets/images/undraw_Pic_profile_re_7g2h.png"),
