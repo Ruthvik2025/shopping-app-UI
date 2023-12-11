@@ -1,3 +1,4 @@
+import "package:days_30_flutter/widgets/drawer.dart";
 import "package:flutter/material.dart";
 
 class HomePage extends StatelessWidget {
@@ -15,7 +16,7 @@ class HomePage extends StatelessWidget {
           child: const Text("Legion"),
         ),
       ),
-      drawer: Drawer(),
+      drawer: MyDrawer(),
     );
   }
 }
