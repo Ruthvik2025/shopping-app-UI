@@ -2,11 +2,31 @@ import "package:days_30_flutter/models/catalog.dart";
 import "package:days_30_flutter/widgets/drawer.dart";
 import "package:days_30_flutter/widgets/item_widget.dart";
 import "package:flutter/material.dart";
+import "package:flutter/services.dart";
+import "dart:convert";
 
-// day-12 learned about listviebuilder(), how to generate dummylist
+// day-13 learned about to add local files (Load and decode Json)
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+    loadData();
+  }
+
+  loadData() async {
+    final jsonData = await rootBundle.loadString("assets/files/catalog.json");
+    final decodeData = jsonDecode(jsonData);
+    var productsData = decodeData["products"];
+    print(productsData);
+  }
 
   @override
   Widget build(BuildContext context) {
