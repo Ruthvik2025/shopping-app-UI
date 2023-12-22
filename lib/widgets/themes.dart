@@ -13,3 +13,6 @@ class MyTheme {
         brightness: Brightness.dark,
       );
 }
+
+const Color creamColor = Color(0xfff5f5f5);
+const Color neavyBlue = Color(0xff403b58);
