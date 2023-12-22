@@ -1,20 +1,19 @@
-import "package:days_30_flutter/models/catalog.dart";
-import "package:days_30_flutter/widgets/drawer.dart";
-import "package:days_30_flutter/widgets/item_widget.dart";
-import "package:flutter/material.dart";
-import "package:flutter/services.dart";
-import "dart:convert";
-
-// day-13 learned about to add local files (Load and decode Json)
+import 'package:days_30_flutter/models/catalog.dart';
+import 'package:days_30_flutter/widgets/drawer.dart';
+import 'package:days_30_flutter/widgets/item_widget.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'dart:convert';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-
   @override
-  State<HomePage> createState() => _HomePageState();
+  _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  final int days = 30;
+  final String name = "Codepur";
+
   @override
   void initState() {
     super.initState();
@@ -22,34 +21,36 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
-    final jsonData = await rootBundle.loadString("assets/files/catalog.json");
-    final decodeData = jsonDecode(jsonData);
-    var productsData = decodeData["products"];
-    print(productsData);
+    await Future.delayed(Duration(seconds: 4));
+    final catalogJson =
+        await rootBundle.loadString("assets/files/catalog.json");
+    final decodedData = jsonDecode(catalogJson);
+    var productsData = decodedData["products"];
+    CatalogModel.items = List.from(productsData)
+        .map<Item>((item) => Item.fromMap(item))
+        .toList();
+    setState(() {});
   }
 
   @override
   Widget build(BuildContext context) {
-    final dummyList = List.generate(
-      25,
-      (index) => CatlogModel.items[0],
-    );
-
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        title: const Text("MyApp"),
+        title: Text("Catalog App"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: ListView.builder(
-          itemCount: dummyList.length,
-          itemBuilder: (context, index) {
-            return ItemWidget(
-              item: dummyList[index],
-            );
-          },
-        ),
+        child: (CatalogModel.items.isNotEmpty)
+            ? ListView.builder(
+                itemCount: CatalogModel.items.length,
+                itemBuilder: (context, index) => ItemWidget(
+                  item: CatalogModel.items[index],
+                  key: ValueKey<int>(CatalogModel.items[index].id),
+                ),
+              )
+            : Center(
+                child: CircularProgressIndicator(),
+              ),
       ),
       drawer: MyDrawer(),
     );

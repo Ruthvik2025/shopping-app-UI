@@ -1,7 +1,5 @@
-// ignore_for_file: use_build_context_synchronously
-
-import "package:days_30_flutter/utili/class_route.dart";
-import "package:flutter/material.dart";
+import 'package:days_30_flutter/utili/class_route.dart';
+import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -20,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
         changeButton = true;
       });
       await Future.delayed(const Duration(seconds: 1));
-      await Navigator.pushNamed(context, MyRoute.homeRoute);
+      await Navigator.pushNamed(context, MyRoutes.homeRoute);
       setState(() {
         changeButton = false;
       });
@@ -95,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                         height: 40.0,
                       ),
                       Material(
-                        color: Colors.deepPurple,
+                        color: Colors.black,
                         borderRadius:
                             BorderRadius.circular(changeButton ? 50 : 8),
                         child: InkWell(

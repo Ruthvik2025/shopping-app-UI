@@ -1,11 +1,12 @@
-import "package:flutter/material.dart";
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Colors.deepPurple,
+        color: Colors.black,
         child: ListView(
           padding: EdgeInsets.zero,
           children: const [
@@ -13,8 +14,8 @@ class MyDrawer extends StatelessWidget {
               padding: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.zero,
-                accountName: Text("Ruthvik W"),
-                accountEmail: Text("ruthvik@@gmail.com"),
+                accountName: Text("Ruthvik"),
+                accountEmail: Text("ruthvik@gmail.com"),
                 currentAccountPicture: CircleAvatar(
                   backgroundImage: AssetImage(
                       "assets/images/undraw_Pic_profile_re_7g2h.png"),
@@ -23,7 +24,7 @@ class MyDrawer extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(
-                Icons.home,
+                CupertinoIcons.home,
                 color: Colors.white,
               ),
               title: Text(
@@ -35,7 +36,7 @@ class MyDrawer extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(
-                Icons.person_add_sharp,
+                CupertinoIcons.profile_circled,
                 color: Colors.white,
               ),
               title: Text(
@@ -47,7 +48,7 @@ class MyDrawer extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(
-                Icons.mail,
+                CupertinoIcons.mail,
                 color: Colors.white,
               ),
               title: Text(
