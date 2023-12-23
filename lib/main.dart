@@ -1,4 +1,5 @@
-import 'package:days_30_flutter/pages/home_pade.dart';
+import 'package:days_30_flutter/pages/cart_page.dart';
+import 'package:days_30_flutter/pages/home_page.dart';
 import 'package:days_30_flutter/pages/login_page.dart';
 import 'package:days_30_flutter/utili/class_route.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) => LoginPage(),
         MyRoutes.homeRoute: (context) => HomePage(),
-        MyRoutes.loginRoute: (context) => LoginPage()
+        MyRoutes.loginRoute: (context) => LoginPage(),
+        MyRoutes.cartPage: (context) => CartPage(),
       },
     );
   }

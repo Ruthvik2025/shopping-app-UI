@@ -11,7 +11,9 @@ class HomeDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: creamColor,
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -37,6 +39,11 @@ class HomeDetails extends StatelessWidget {
                           .textStyle(context.captionStyle)
                           .make(),
                       10.heightBox,
+                      "Eiusmod sit magna ut amet est laborum elit Lorem est tempor consectetur. Pariatur deserunt aute consequat est minim amet mollit proident est sit ex occaecat mollit. Cupidatat ullamco nisi ex ipsum sunt aliquip adipisicing tempor in dolore ut. Deserunt quis do dolore do amet duis nisi eiusmod est laborum quis officia"
+                          .text
+                          .textStyle(context.captionStyle)
+                          .make()
+                          .p8(),
                     ],
                   ).py64(),
                 ),
