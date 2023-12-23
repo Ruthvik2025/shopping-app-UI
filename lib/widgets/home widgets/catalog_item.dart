@@ -16,13 +16,17 @@ class CatalogItem extends StatelessWidget {
       child: Row(
         children: [
           Hero(
-              tag: Key(
-                catalog.id.toString(),
-              ),
+            tag: Key(
+              catalog.id.toString(),
+            ),
+            child: Card(
+              color: Theme.of(context).canvasColor,
               child: CatalogImage(
                 image: catalog.image,
                 key: ValueKey(catalog.image),
-              )),
+              ),
+            ),
+          ),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,7 +46,7 @@ class CatalogItem extends StatelessWidget {
                         backgroundColor: MaterialStateProperty.all(neavyBlue),
                         shape: MaterialStateProperty.all(StadiumBorder()),
                       ),
-                      child: "Buy".text.color(Vx.white).make(),
+                      child: "Add to cart".text.color(Vx.white).make(),
                     )
                   ],
                 ).pOnly(right: 8.0)
@@ -51,6 +55,6 @@ class CatalogItem extends StatelessWidget {
           )
         ],
       ),
-    ).white.rounded.square(150).make().py16();
+    ).color(context.cardColor).rounded.square(150).make().py16();
   }
 }

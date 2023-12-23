@@ -1,7 +1,6 @@
 import 'package:days_30_flutter/models/catalog.dart';
-import 'package:days_30_flutter/utili/class_route.dart';
 import 'package:days_30_flutter/widgets/home%20widgets/catalog_list.dart';
-import 'package:days_30_flutter/widgets/themes.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
@@ -36,14 +35,15 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: IconButton(
-          onPressed: () {
-            Navigator.pushNamed(context, MyRoutes.cartPage);
-          },
-          icon: const Icon(Icons.shopping_cart),
-          iconSize: Vx.dp64,
-          color: neavyBlue),
-      backgroundColor: Vx.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        // ignore: sort_child_properties_last
+        child: const Icon(
+          Icons.shopping_cart,
+        ),
+        backgroundColor: Theme.of(context).buttonTheme.colorScheme?.primary,
+      ),
       body: SafeArea(
         child: Container(
           padding: Vx.m32,
@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
               CatalogHeader(),
               // ignore: unnecessary_null_comparison
               if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-                CatalogList().p16().expand()
+                CatalogList().p2().expand()
               else
                 Center(
                   child: CircularProgressIndicator(),
@@ -72,8 +72,17 @@ class CatalogHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        "Catalog App".text.xl5.bold.color(neavyBlue).make(),
-        "Trending products".text.xl2.make(),
+        "Catalog App"
+            .text
+            .xl5
+            .bold
+            .color(Theme.of(context).textTheme.bodyLarge?.color)
+            .make(),
+        "Trending products"
+            .text
+            .xl2
+            .color(Theme.of(context).textTheme.bodySmall?.color)
+            .make(),
       ],
     );
   }

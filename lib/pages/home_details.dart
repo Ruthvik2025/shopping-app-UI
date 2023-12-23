@@ -63,8 +63,8 @@ class HomeDetails extends StatelessWidget {
               backgroundColor: MaterialStateProperty.all(neavyBlue),
               shape: MaterialStateProperty.all(StadiumBorder()),
             ),
-            child: "Buy".text.xl2.color(Vx.white).make(),
-          ).w24(context).h4(context)
+            child: "Add to cart".text.xl2.color(Vx.white).make(),
+          ).w40(context).h4(context)
         ],
       ).wh(200, 100).p12(),
     );
