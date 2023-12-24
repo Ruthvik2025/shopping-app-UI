@@ -6,7 +6,9 @@ class MyTheme {
         primarySwatch: Colors.deepPurple,
         cardColor: Colors.white,
         canvasColor: creamColor,
-        buttonTheme: ButtonThemeData(buttonColor: Colors.grey[300]),
+        buttonTheme: ButtonThemeData(
+          colorScheme: ColorScheme.light(primary: Colors.black),
+        ),
         appBarTheme: const AppBarTheme(
           color: Colors.white,
           elevation: 0.0,
@@ -15,7 +17,7 @@ class MyTheme {
         scaffoldBackgroundColor: Vx.white,
         textTheme: Theme.of(context).textTheme.copyWith(
               bodyLarge: TextStyle(color: Colors.blue),
-              bodySmall: TextStyle(color: Colors.blue[100]),
+              bodySmall: TextStyle(color: Colors.blue),
             ),
       );
 
@@ -25,15 +27,17 @@ class MyTheme {
         canvasColor: darkcreamColor,
         scaffoldBackgroundColor: Vx.gray400,
         buttonTheme: ButtonThemeData(
-            buttonColor: Colors.grey[700], textTheme: ButtonTextTheme.primary),
+          colorScheme: ColorScheme.light(primary: Colors.blue),
+        ),
         appBarTheme: const AppBarTheme(
           color: Colors.black,
           elevation: 0.0,
-          iconTheme: IconThemeData(color: Colors.black),
+          iconTheme: IconThemeData(color: Colors.white),
         ),
         textTheme: Theme.of(context).textTheme.copyWith(
-            bodyLarge: TextStyle(color: Colors.lightBlue),
-            bodySmall: TextStyle(color: Colors.white)),
+              bodyLarge: TextStyle(color: Colors.lightBlue),
+              bodySmall: TextStyle(color: Colors.white),
+            ),
       );
 }
 
