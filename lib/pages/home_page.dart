@@ -1,4 +1,6 @@
 import 'package:days_30_flutter/models/catalog.dart';
+import 'package:days_30_flutter/pages/cart_page.dart';
+import 'package:days_30_flutter/utili/class_route.dart';
 import 'package:days_30_flutter/widgets/home%20widgets/catalog_list.dart';
 
 import 'package:flutter/material.dart';
@@ -37,7 +39,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, MyRoutes.cartPage);
+        },
         // ignore: sort_child_properties_last
         child: const Icon(
           Icons.shopping_cart,

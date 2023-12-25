@@ -27,7 +27,9 @@ class MyTheme {
         canvasColor: darkcreamColor,
         scaffoldBackgroundColor: Vx.gray400,
         buttonTheme: ButtonThemeData(
-          colorScheme: ColorScheme.light(primary: Colors.blue),
+          colorScheme: ColorScheme.dark(
+            primary: Colors.blue,
+          ),
         ),
         appBarTheme: const AppBarTheme(
           color: Colors.black,
