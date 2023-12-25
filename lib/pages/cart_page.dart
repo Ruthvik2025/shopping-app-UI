@@ -56,12 +56,15 @@ class _CartWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\$999".text.xl5.make(),
+          "\$999".text.textStyle(context.bodyLarge).xl5.make(),
           ElevatedButton(
             style: ButtonStyle(
                 backgroundColor: MaterialStatePropertyAll(
                     Theme.of(context).buttonTheme.colorScheme!.primary)),
-            onPressed: () {},
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: "Buying is not available yet".text.make()));
+            },
             child: Text(
               "Buy",
               style: TextStyle(

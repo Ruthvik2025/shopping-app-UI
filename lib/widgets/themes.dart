@@ -37,7 +37,7 @@ class MyTheme {
           iconTheme: IconThemeData(color: Colors.white),
         ),
         textTheme: Theme.of(context).textTheme.copyWith(
-              bodyLarge: TextStyle(color: Colors.lightBlue),
+              bodyLarge: TextStyle(color: Colors.white),
               bodySmall: TextStyle(color: Colors.white),
             ),
       );
