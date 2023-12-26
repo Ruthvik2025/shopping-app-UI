@@ -59,7 +59,7 @@ class _HomePageState extends State<HomePage> {
               if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
                 CatalogList().p2().expand()
               else
-                Center(
+                const Center(
                   child: CircularProgressIndicator(),
                 )
             ],
@@ -71,6 +71,8 @@ class _HomePageState extends State<HomePage> {
 }
 
 class CatalogHeader extends StatelessWidget {
+  const CatalogHeader({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(

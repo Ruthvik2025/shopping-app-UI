@@ -1,3 +1,4 @@
+import 'package:days_30_flutter/models/cart_mdeol.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -28,13 +29,14 @@ class _CartList extends StatefulWidget {
 }
 
 class _CartListState extends State<_CartList> {
+  final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 5,
+      itemCount: _cart.items.length,
       itemBuilder: (context, index) {
         return ListTile(
-          title: const Text("item"),
+          title: _cart.items[index].name.text.make(),
           leading: const Icon(Icons.done_outline),
           trailing: IconButton(
             onPressed: () {},
@@ -47,7 +49,8 @@ class _CartListState extends State<_CartList> {
 }
 
 class _CartWidget extends StatelessWidget {
-  const _CartWidget({super.key});
+  final _cart = CartModel();
+  _CartWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +59,7 @@ class _CartWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\$999".text.textStyle(context.bodyLarge).xl5.make(),
+          "\$${_cart.totalPrice}".text.textStyle(context.bodyLarge).xl5.make(),
           ElevatedButton(
             style: ButtonStyle(
                 backgroundColor: MaterialStatePropertyAll(
